@@ -236,11 +236,13 @@ nav ul li a:hover {
     margin-bottom: 20px;
     font-weight: 800;
     line-height: 1.2;
-    background: linear-gradient(to right, #0a2463, #8b0000);
+    background: linear-gradient(145deg, #0a2463, #4b1232, #8b0000, #8b0000, #4b1232, #0a2463);
     -webkit-background-clip: text;
+    background-size: 200%;
     background-clip: text;
     color: transparent;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: gradientAnimation 10s linear infinite;
 }
 
 .hero-content p {
@@ -254,6 +256,12 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+@keyframes gradientAnimation {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
 .cta-container {
     margin-top: 20px;
 }
@@ -263,17 +271,25 @@ nav ul li a:hover {
     align-items: center;
     padding: 15px 30px;
     border-radius: 8px;
-    background: linear-gradient(90deg, #0a2463 0%, #8b0000 100%);
+    background: linear-gradient(-135deg, #0a2463, #4b1232, #8b0000, #8b0000, #4b1232, #0a2463);
     color: white;
+    background-size: 600%;
     font-weight: 600;
     font-size: 1.2rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(10, 36, 99, 0.3);
 }
 
+
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 2px 25px 5px rgb(107, 110, 255);
+    animation: gradientAnimation 15s linear infinite;
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 15px rgba(10, 36, 99, 0.3);
 }
 
 .button-text {
@@ -288,6 +304,7 @@ nav ul li a:hover {
 .cta-button:hover .button-icon {
     transform: translateX(5px);
 }
+
 
 /* Responsive Styles for Hero */
 @media screen and (max-width: 992px) {
